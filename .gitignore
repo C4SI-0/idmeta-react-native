@@ -2,3 +2,5 @@
 node_modules
 example/.bundle
 example/node_modules
+android/build
+example/android/app
