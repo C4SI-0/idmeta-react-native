@@ -10,4 +10,5 @@ abstract class IdmetaReactNativeSpec extends ReactContextBaseJavaModule {
   }
 
   public abstract void multiply(double a, double b, Promise promise);
+  public abstract void startIdmetaFlow(String flowId, String userToken);
 }

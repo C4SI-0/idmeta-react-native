@@ -8,3 +8,12 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+# Keep Google Play Core library classes
+-dontwarn com.google.android.play.core.**
+
+# Keep Flutter-specific classes
+-keep class io.flutter.app.** { *; }
+-keep class io.flutter.plugins.** { *; }
+-keep class io.flutter.embedding.** { *; }
+-keep class io.flutter.util.** { *; }

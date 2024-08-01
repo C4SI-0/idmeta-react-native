@@ -16,6 +16,18 @@ buildscript {
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
     }
+
+}
+
+allprojects{
+    repositories{
+        maven {
+            url System.getenv("FLUTTER_MODULE")
+        }
+        maven {
+            url "https://storage.googleapis.com/download.flutter.io"
+        }
+    }
 }
 
 apply plugin: "com.facebook.react.rootproject"

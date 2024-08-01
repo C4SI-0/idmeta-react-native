@@ -11,7 +11,7 @@ const isTurboModuleEnabled = global.__turboModuleProxy != null;
 
 const IdmetaReactNativeModule = isTurboModuleEnabled
   ? require('./NativeIdmetaReactNative').default
-  : NativeModules.IdmetaReactNative;
+  : NativeModules.IdmetaReactNativeModule;
 
 const IdmetaReactNative = IdmetaReactNativeModule
   ? IdmetaReactNativeModule
@@ -26,4 +26,8 @@ const IdmetaReactNative = IdmetaReactNativeModule
 
 export function multiply(a: number, b: number): Promise<number> {
   return IdmetaReactNative.multiply(a, b);
+}
+
+export function startIdmetaFlow(flowId: string, userToken: string): void {
+  IdmetaReactNative.startIdmetaFlow(flowId, userToken);
 }

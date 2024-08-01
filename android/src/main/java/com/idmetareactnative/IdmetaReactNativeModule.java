@@ -1,29 +1,43 @@
+
 package com.idmetareactnative;
 
-import androidx.annotation.NonNull;
-
-import com.facebook.react.bridge.Promise;
+import android.app.Activity;
+import android.content.Intent;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.UiThreadUtil;
 
-public class IdmetaReactNativeModule extends IdmetaReactNativeSpec {
-  public static final String NAME = "IdmetaReactNative";
+public class IdmetaReactNativeModule extends ReactContextBaseJavaModule {
 
-  IdmetaReactNativeModule(ReactApplicationContext context) {
-    super(context);
-  }
+    private final ReactApplicationContext reactContext;
 
-  @Override
-  @NonNull
-  public String getName() {
-    return NAME;
-  }
+    // Constructor
+    public IdmetaReactNativeModule(ReactApplicationContext context) {
+        super(context);
+        this.reactContext = context;
+    }
 
+    // Module name in React Native
+    @Override
+    public String getName() {
+        return "IdmetaReactNativeModule";
+    }
 
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
-  @ReactMethod
-  public void multiply(double a, double b, Promise promise) {
-    promise.resolve(a * b);
-  }
+    // Custom method to start FlutterActivity
+    @ReactMethod
+    public void startIdmetaFlow(String flowId, String userToken) {
+        final Activity currentActivity = getCurrentActivity();
+        if (currentActivity != null) {
+            UiThreadUtil.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(currentActivity, FlutterStarterActivity.class);
+                    intent.putExtra("flowId", flowId);
+                    intent.putExtra("userToken", userToken);
+                    currentActivity.startActivity(intent);
+                }
+            });
+        }
+    }
 }

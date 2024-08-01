@@ -1,17 +1,16 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'idmeta-react-native';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { startIdmetaFlow } from 'idmeta-react-native';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const handlePress = () => {
+    startIdmetaFlow('144', 'Bearer 17|PnvZiUqyZmUy5TxiowXxyFKGTLYmvIUA3a7eYPZp13e3c764');
+  };
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Pressable style={styles.button} onPress={handlePress}>
+        <Text style={styles.text}>Start Flutter</Text>
+      </Pressable>
     </View>
   );
 }
@@ -19,12 +18,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    marginHorizontal: 20,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: '#1abc9c',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
   },
 });
