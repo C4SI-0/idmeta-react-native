@@ -10,80 +10,11 @@ To install the library, run:
 npm install idmeta-react-native
 ```
 
-## Usage
-
-
-```js
-// App.js
-import React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
-import { startIdmetaFlow } from 'idmeta-react-native'; // Import the function directly
-
-const App = () => {
-  const flowId = 'your-flow-id';  // Replace with actual flowId
-  const userToken = 'your-user-token';  // Replace with actual userToken
-
-  const handleStartFlow = () => {
-    startIdmetaFlow(flowId, userToken);
-  };
-
-  return (
-    <View style={styles.container}>
-      <Button title="Start Flow" onPress={handleStartFlow} />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
-export default App;
-
-```
+## Android Setup
 
 ```js
 
-// App.tsx
-import React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
-import { startIdmetaFlow } from 'idmeta-react-native'; // Import the function directly
-
-const App = () => {
-  const flowId = 'your-flow-id';  // Replace with actual flowId
-  const userToken = 'your-user-token';  // Replace with actual userToken
-
-  const handleStartFlow = () => {
-    startIdmetaFlow(flowId, userToken);
-  };
-
-  return (
-    <View style={styles.container}>
-      <Button title="Start Flow" onPress={handleStartFlow} />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
-export default App;
-
-
-```
-
-```js
-Android Setup
-To configure your Android project to use this library, add the following lines to your android/build.gradle file:
+To configure your Android project to use this library, add the following lines to your android/build.gradle
 
 allprojects {
     repositories {
@@ -96,6 +27,43 @@ allprojects {
     }
 }
 ```
+
+
+## Usage
+
+```js
+import React from 'react';
+import { View, Button, StyleSheet } from 'react-native';
+import { startIdmetaFlow } from 'idmeta-react-native'; // Import the function directly
+
+const App = () => {
+  const flowId = 'your-flow-id';  // Replace with actual flowId
+  const userToken = 'your-user-token';  // Replace with actual userToken
+
+  const handleStartFlow = () => {
+    startIdmetaFlow(flowId, userToken);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Button title="Start Flow" onPress={handleStartFlow} />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+export default App;
+
+```
+
+
 
 
 ## Contributing
