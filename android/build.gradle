@@ -61,7 +61,7 @@ android {
       minifyEnabled true
     }
     profile {
-          initWith debug
+      initWith debug
      }
   }
 
@@ -93,7 +93,7 @@ repositories {
   mavenCentral()
   google()
    maven {
-         url System.getenv("FLUTTER_MODULE")
+        url uri("../build/host/outputs/repo")
   }
   maven {
         url "https://storage.googleapis.com/download.flutter.io"
