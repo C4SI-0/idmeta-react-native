@@ -14,6 +14,7 @@ npm install idmeta-react-native
 
 
 ```js
+// App.js
 import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 import { startIdmetaFlow } from 'idmeta-react-native'; // Import the function directly
@@ -45,7 +46,9 @@ export default App;
 
 ```
 
-```tsx
+```js
+
+// App.tsx
 import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 import { startIdmetaFlow } from 'idmeta-react-native'; // Import the function directly

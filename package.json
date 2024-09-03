@@ -1,7 +1,7 @@
 {
   "name": "idmeta-react-native",
   "version": "0.1.0",
-  "description": "package integerated with idmeta sdk",
+  "description": "idmeta-react-native is a React Native library integrated with the Idmeta SDK, providing seamless integration and functionality for your React Native applications.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
