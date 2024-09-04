@@ -1,4 +1,4 @@
-package com.idmetareactnative;
+package com.reactlibrary;
 
 import android.content.Intent;
 import android.os.Bundle;

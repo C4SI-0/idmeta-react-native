@@ -1,5 +1,5 @@
 
-package com.idmetareactnative;
+package com.reactlibrary;
 
 import android.app.Activity;
 import android.content.Intent;
