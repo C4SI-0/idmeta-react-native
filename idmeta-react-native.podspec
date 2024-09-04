@@ -1,30 +1,20 @@
-# idmeta-react-native.podspec
 
-require "json"
+# FlutterModuleRn.podspec
 
-package = JSON.parse(File.read(File.join(__dir__, "package.json")))
+require './ios/Podspecs/common'
 
 Pod::Spec.new do |s|
+  setCommonProps(s)
   s.name         = "idmeta-react-native"
-  s.version      = package["version"]
-  s.summary      = package["description"]
   s.description  = <<-DESC
                   idmeta-react-native
                    DESC
-  s.homepage     = "https://github.com/github_account/idmeta-react-native"
-  # brief license entry:
-  s.license      = "MIT"
-  # optional - use expanded license entry instead:
-  # s.license    = { :type => "MIT", :file => "LICENSE" }
-  s.authors      = { "Your Name" => "yourname@email.com" }
-  s.platforms    = { :ios => "9.0" }
-  s.source       = { :git => "https://github.com/github_account/idmeta-react-native.git", :tag => "#{s.version}" }
+  s.source_files = "ios-rn/**/*.{h,c,cc,cpp,m,mm,swift}"
 
-  s.source_files = "ios/**/*.{h,c,cc,cpp,m,mm,swift}"
-  s.requires_arc = true
-
-  s.dependency "React"
-  # ...
-  # s.dependency "..."
+  s.dependency "React-Core"
+  s.dependency "Flutter"
+  s.dependency "FlutterModuleFrameworks-Debug"
+  s.dependency "FlutterModuleFrameworks-Release"
 end
+
 
