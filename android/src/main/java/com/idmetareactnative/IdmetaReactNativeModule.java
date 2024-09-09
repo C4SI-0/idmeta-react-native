@@ -1,4 +1,3 @@
-
 package com.idmetareactnative;
 
 import android.app.Activity;

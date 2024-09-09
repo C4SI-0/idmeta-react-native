@@ -16,13 +16,13 @@ const IdmetaReactNativeModule = isTurboModuleEnabled
 const IdmetaReactNative = IdmetaReactNativeModule
   ? IdmetaReactNativeModule
   : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+    {},
+    {
+      get() {
+        throw new Error(LINKING_ERROR);
+      },
+    }
+  );
 
 export function multiply(a: number, b: number): Promise<number> {
   return IdmetaReactNative.multiply(a, b);

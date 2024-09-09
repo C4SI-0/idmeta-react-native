@@ -1,3 +1,4 @@
+
 package com.idmetareactnative;
 
 import com.facebook.react.bridge.ReactApplicationContext;
