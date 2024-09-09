@@ -7,19 +7,24 @@
 To install the library, run:
 
 ```sh
-npm install idmeta-react-native
+npm install https://github.com/C4SI-0/idmeta-react-native.git
 ```
 
 ## Android Setup
 
 ```js
 
-To configure your Android project to use this library, add the following lines to your android/build.gradle
+
+To configure your Android project to use this plugin, 
+
+Open <host>\app\build.gradle
+
+Add the following code.
 
 allprojects {
     repositories {
         maven {
-            url uri("../../node_modules/idmeta-react-native/build/host/outputs/repo")
+            url uri("../../node_modules/idmeta-react-native/android/build/host/outputs/repo")
         }
         maven {
             url "https://storage.googleapis.com/download.flutter.io"
@@ -32,34 +37,45 @@ allprojects {
 ## Usage
 
 ```js
-import React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
-import { startIdmetaFlow } from 'idmeta-react-native'; // Import the function directly
+import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { startIdmetaFlow } from 'idmeta-react-native';
 
-const App = () => {
-  const flowId = 'your-flow-id';  // Replace with actual flowId
-  const userToken = 'your-user-token';  // Replace with actual userToken
-
-  const handleStartFlow = () => {
-    startIdmetaFlow(flowId, userToken);
+export default function App() {
+  const handlePress = () => {
+    startIdmetaFlow('Flow Id', 'Token Id');
   };
 
   return (
     <View style={styles.container}>
-      <Button title="Start Flow" onPress={handleStartFlow} />
+      <Pressable style={styles.button} onPress={handlePress}>
+        <Text style={styles.text}>Start Flutter</Text>
+      </Pressable>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+  },
+  button: {
     alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    marginHorizontal: 20,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: '#1abc9c',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
   },
 });
-
-export default App;
 
 ```
 
