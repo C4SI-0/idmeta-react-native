@@ -33,6 +33,7 @@ allprojects {
 }
 ```
 
+## IOS Setup
 ```js
 iOS
 Add following to your Podfile:
@@ -45,7 +46,6 @@ target ‘ReactNativeApp’ do
  use_idmeta_rn!()
  …
 end
-
 
 ```
 
