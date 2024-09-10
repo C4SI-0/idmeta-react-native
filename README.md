@@ -15,7 +15,7 @@ npm install https://github.com/C4SI-0/idmeta-react-native.git
 ```js
 
 
-To configure your Android project to use this plugin, 
+To configure your Android project to use this package, 
 
 Open <host>\app\build.gradle
 
@@ -33,6 +33,21 @@ allprojects {
 }
 ```
 
+```js
+iOS
+Add following to your Podfile:
+
+
+require_relative ‘../node_modules/idmeta-react-native/ios/pods’
+…
+target ‘ReactNativeApp’ do
+ …
+ use_idmeta_rn!()
+ …
+end
+
+
+```
 
 ## Usage
 
@@ -48,7 +63,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Pressable style={styles.button} onPress={handlePress}>
-        <Text style={styles.text}>Start Flutter</Text>
+        <Text style={styles.text}>Start Id Meta Flow</Text>
       </Pressable>
     </View>
   );
